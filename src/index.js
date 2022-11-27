@@ -15,7 +15,11 @@ app.use("/login" , loginControl)
 const productControl = require("./controls/product.control");
 app.use("/products" , productControl)
 
-
+app.use("/", (req, res) => {
+    res.send(
+      `<h1 style="color:#C7AA8D;font-size:46px;margin:20px auto;">Welcome to FullStack Todo-App API</h1>`
+    );
+  });
 app.listen(process.env.PORT ,async()=>{
     try{
         await connect();
